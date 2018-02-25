@@ -40,6 +40,17 @@ $colors: (
   light:      #f4f4f4,
   dark:       #222
 );
+.tabbar {
+	a.tab-button[aria-selected=true]{
+		color: red;
+		.tab-button-icon {
+			color: red;
+		}
+	}
+}
+.toolbar-background {
+    background-color: red;
+  }
 
 
 // App iOS Variables
