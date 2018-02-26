@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { BusinessPage } from '../business/business';
 
 @Component({
   selector: 'page-home',
@@ -8,11 +9,11 @@ import { NavController } from 'ionic-angular';
 export class HomePage {
 
   searchQuery: string = '';
-  items: string[];
+  items: any[];
   initializeItems() {
     this.items = [
-      'Amsterdam',
-      'Bogota'
+      {name: 'Amsterdam',src: '././assets/imgs/buffalo_inner_banner.jpg'},
+      {name: 'Bolgaria',src: '././assets/imgs/buffalo_inner_banner.jpg'}
     ];
   }
   constructor(public navCtrl: NavController) {
@@ -28,9 +29,15 @@ export class HomePage {
     // if the value is an empty string don't filter the items
     if (val && val.trim() != '') {
       this.items = this.items.filter((item) => {
-        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+        return (item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
   }
-
+  starClicked(value){
+    console.log("Rated :", value);
+ }
+  goToBusiness(item: string){
+    this.navCtrl.push(BusinessPage,{item});
+    console.log(item);
+  }
 }
