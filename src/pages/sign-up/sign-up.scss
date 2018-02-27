@@ -1,0 +1,32 @@
+
+#krezaTerms {
+    margin: auto;
+    text-align: center;
+    color: #484848;
+    font-size: 17px;
+    }
+    #fullName {
+        display: inline-flex;
+    }
+    #signUpform {
+        border-top: 1px solid gray;
+        border-bottom: 1px solid gray;
+    }
+    #signUpform ion-label {
+        color:	#202020;
+        font-size: 17px;
+    }
+    #facebook {
+        background-color:#3b5998;
+    }
+    #google {
+        background-color: white;
+        color:#282828;
+    }
+    
+    
+    .button{ 
+        font-size:17px;
+        height: 40px;
+        text-transform:none;
+    }
