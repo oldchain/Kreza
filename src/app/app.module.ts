@@ -9,10 +9,13 @@ import { ProfilePage } from '../pages/profile/profile';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { BusinessPage } from '../pages/business/business';
+import { SignUpPage } from '../pages/sign-up/sign-up';
+import { LoginPage } from '../pages/login/login';
 import { WriteReviewPage } from '../pages/write-review/write-review';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
 
 
 @NgModule({
@@ -23,6 +26,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     TabsPage,
     BusinessPage,
+    SignUpPage,
+    LoginPage,
     WriteReviewPage,
     IonRating
   ],
@@ -37,6 +42,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ProfilePage,
     HomePage,
     BusinessPage,
+    SignUpPage,
+    LoginPage,
     WriteReviewPage,
     TabsPage
   ],
