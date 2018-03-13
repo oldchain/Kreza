@@ -6,13 +6,85 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-    <ion-item>
-      <ion-input type="text" placeholder="Username"></ion-input>
-    </ion-item>
-  
-    <ion-item>
-      <ion-input type="password" placeholder="Password"></ion-input>
-    </ion-item>
-    <button ion-button block color="danger">Sign In</button>
+
+<ion-content>
+<ion-grid id="container">
+  <ion-list id="user">
+      <ion-item class="item item-text-wrap">
+          <ion-row>
+              <ion-col col-5>
+                  <img id= "profilePic" src="././assets/imgs/Screenshot_5.png">
+              </ion-col>
+
+              <ion-col col-7 id="userInfo">
+                  <div id="userName">Groot</div>
+                  <div>Somewhere in the Galaxy</div>
+                  <div>
+                      <ion-icon class="userIcons" ios="ios-people" md="md-people"><span> 0</span></ion-icon>  
+                      <ion-icon class="userIcons" ios="ios-clipboard" md="md-clipboard"><span> 10</span></ion-icon>
+                      <ion-icon class="userIcons" ios="ios-camera" md="md-camera"> <span>50</span></ion-icon>
+                  </div>
+              </ion-col>
+          </ion-row>
+      </ion-item>
+      
+      <ion-item id="buttonWithIcons">
+          <ion-row>
+              <ion-col col-4 no-padding>
+                  <button ion-button clear  class="text-on-bottom" no-margin>
+                      <ion-icon ios="ios-clipboard" md="md-clipboard"></ion-icon>
+                      Write Review
+                  </button>
+              </ion-col>
+              <ion-col col-4 no-padding>
+                  <button ion-button clear  class="text-on-bottom"  no-margin>
+                      <ion-icon ios="ios-camera" md="md-camera"></ion-icon>
+                      Add Photo
+                  </button>
+              </ion-col>
+              <ion-col col-4 no-padding>
+                  <button ion-button clear  class="text-on-bottom"  no-margin>
+                      <ion-icon ios="ios-checkmark-circle" md="md-checkmark-circle"></ion-icon>
+                      Check In
+                  </button>
+              </ion-col>
+          </ion-row>
+      </ion-item>
+  </ion-list> 
+</ion-grid> 
+
+      <ion-item-divider color="light"></ion-item-divider>
+          <ion-list  detail-push id="userInfo">
+              <button ion-item > 
+                  <ion-icon ios="ios-clipboard" md="md-clipboard"></ion-icon>
+                  Reviews  <span> 0</span> 
+              </button>
+              <button ion-item >
+                  <ion-icon ios="ios-camera" md="md-camera"></ion-icon>
+                  Photos and Videos  <span> 0</span>
+              </button>
+              <button ion-item >
+                      <ion-icon ios="ios-bookmark" md="md-bookmark"></ion-icon>
+                      Bookmarks  <span> 0</span>
+              </button>
+              <button ion-item >
+                      <ion-icon ios="ios-people" md="md-people"></ion-icon>
+                      Friends  <span> 0</span>
+              </button>
+              <button ion-item >
+                      <ion-icon ios="ios-contacts" md="md-contacts"></ion-icon>
+                      Following  <span> 0</span>
+              </button>
+              <button ion-item >
+                      <ion-icon ios="ios-more" md="ios-more"></ion-icon>
+                      More About Me  <span> 0</span>
+              </button>
+      </ion-list>
+
+      <ion-item-divider color="light" id="feed">My Feed</ion-item-divider>
+          <ion-list id="newFeed">
+              No New Feed from Groot
+              </ion-list>
+
 </ion-content>
+
