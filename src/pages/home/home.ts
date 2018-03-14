@@ -17,7 +17,7 @@ export class HomePage {
       {name: 'Bolgaria',src: '././assets/imgs/buffalo_inner_banner.jpg'}
     ];
   }
-  constructor(public navCtrl: NavController,private splashScreen: SplashScreen) {
+  constructor(public navCtrl: NavController) {
     this.initializeItems();
   }
   getItems(ev: any) {
