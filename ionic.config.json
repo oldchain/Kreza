@@ -1,6 +1,6 @@
 {
   "name": "Kreza",
-  "app_id": "",
+  "app_id": "58e8bc92",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}

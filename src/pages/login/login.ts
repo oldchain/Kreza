@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ProfilePage } from '../profile/profile';
+import { SignUpPage } from '../sign-up/sign-up';
 
 /**
  * Generated class for the LoginPage page.
@@ -24,6 +25,13 @@ export class LoginPage {
   }
   goToProfile(){
     this.navCtrl.push(ProfilePage)
+    .then(() => {
+      const startIndex = this.navCtrl.getActive().index - 1;
+      this.navCtrl.remove(startIndex, 1);
+    });
+  }
+  goToSignUp(){
+    this.navCtrl.push(SignUpPage)
     .then(() => {
       const startIndex = this.navCtrl.getActive().index - 1;
       this.navCtrl.remove(startIndex, 1);

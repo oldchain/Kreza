@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { BusinessPage } from '../business/business';
+import { SplashScreen } from '@ionic-native/splash-screen';
 
 @Component({
   selector: 'page-home',
@@ -16,8 +17,9 @@ export class HomePage {
       {name: 'Bolgaria',src: '././assets/imgs/buffalo_inner_banner.jpg'}
     ];
   }
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController,private splashScreen: SplashScreen) {
     this.initializeItems();
+    this.splashScreen.show();
   }
   getItems(ev: any) {
     // Reset items back to all of the items
