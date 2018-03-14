@@ -7,7 +7,7 @@
 <ion-header>
     <ion-toolbar>
       <ion-title>
-        {{item.name}}
+        Review
       </ion-title>
       <ion-buttons start>
         <button ion-button (click)="dismiss()">
@@ -18,27 +18,14 @@
     </ion-toolbar>
   </ion-header>
   
-  <ion-content padding>
-    <ion-list>  
+  <ion-content>
+    <ion-list>
         <ion-item>
-            <ion-grid>
-                <ion-row>
-                  <ion-col col-4>Rating </ion-col>
-                  <ion-col col-8>
-                      <ion-rating
-                      [numStars]="5"
-                      [readOnly]="false"
-                      [value]="0"
-                      (clicked)="starClicked($event)">
-                      </ion-rating>
-                  </ion-col>
-                </ion-row>
-              </ion-grid>
-        </ion-item><br>
-        <ion-item>
-            <ion-label color="danger" floating>Your Review..</ion-label>
-            <ion-textarea rows="10"></ion-textarea>
+          
         </ion-item>
-        <button ion-button color="danger" block>Add Review</button>
+  
+        <ion-item>
+          
+        </ion-item>
     </ion-list>
   </ion-content>
