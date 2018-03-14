@@ -1,12 +1,9 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { File } from '@ionic-native/file';
-import { Transfer } from '@ionic-native/transfer';
-import { FilePath } from '@ionic-native/file-path';
-import { Camera } from '@ionic-native/camera';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { IonRating } from '../components/ion-rating/ion-rating';
+import { SplashScreen } from '@ionic-native/splash-screen'; 
 
 import { AboutPage } from '../pages/about/about';
 import { ProfilePage } from '../pages/profile/profile';
@@ -19,7 +16,6 @@ import { WriteReviewPage } from '../pages/write-review/write-review';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
 
 
 
@@ -55,10 +51,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    File,
-    Transfer,
-    Camera,
-    FilePath,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

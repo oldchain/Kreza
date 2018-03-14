@@ -1,0 +1,8 @@
+diff a/src/pages/profile/profile.html b/src/pages/profile/profile.html	(rejected hunks)
+@@ -1,5 +1,6 @@
+ <ion-header>
+     <ion-navbar hideBackButton="true">
++      <ion-title>
+         Profile
+       </ion-title>
+     </ion-navbar>
