@@ -19,7 +19,6 @@ export class HomePage {
   }
   constructor(public navCtrl: NavController,private splashScreen: SplashScreen) {
     this.initializeItems();
-    this.splashScreen.show();
   }
   getItems(ev: any) {
     // Reset items back to all of the items
