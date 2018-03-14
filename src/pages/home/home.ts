@@ -33,9 +33,6 @@ export class HomePage {
       })
     }
   }
-  starClicked(value){
-    console.log("Rated :", value);
- }
   goToBusiness(item: string){
     this.navCtrl.push(BusinessPage,{item});
     console.log(item);

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 
+
+
 /**
  * Generated class for the WriteReviewPage page.
  *
@@ -14,8 +16,9 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
   templateUrl: 'write-review.html',
 })
 export class WriteReviewPage {
-
+  item:object;
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
+    this.item = navParams.get('item');
   }
   dismiss() {
     this.viewCtrl.dismiss();
@@ -23,5 +26,7 @@ export class WriteReviewPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad WriteReviewPage');
   }
-
+  starClicked(value){
+    console.log("Rated :", value);
+ }
 }
