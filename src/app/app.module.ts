@@ -13,6 +13,7 @@ import { BusinessPage } from '../pages/business/business';
 import { SignUpPage } from '../pages/sign-up/sign-up';
 import { LoginPage } from '../pages/login/login';
 import { WriteReviewPage } from '../pages/write-review/write-review';
+import { LoginFormPage } from "../pages/login-form/login-form";
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -30,7 +31,8 @@ import { StatusBar } from '@ionic-native/status-bar';
     SignUpPage,
     LoginPage,
     WriteReviewPage,
-    IonRating
+    IonRating,
+    LoginFormPage
   ],
   imports: [
     BrowserModule,
@@ -46,7 +48,8 @@ import { StatusBar } from '@ionic-native/status-bar';
     SignUpPage,
     LoginPage,
     WriteReviewPage,
-    TabsPage
+    TabsPage,
+    LoginFormPage
   ],
   providers: [
     StatusBar,
