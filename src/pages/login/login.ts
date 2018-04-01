@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,ModalController } from 'ionic-angular';
-import { ProfilePage } from '../profile/profile';
 import { SignUpPage } from '../sign-up/sign-up';
 import { LoginFormPage } from '../login-form/login-form';
 
@@ -26,8 +25,9 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
   openModal(item) {
-    let modal = this.modalCtrl.create(LoginFormPage,{item:this.item});
-    modal.present();
+    this.navCtrl.push(LoginFormPage)
+    //let modal = this.modalCtrl.create(LoginFormPage,{item:this.item});
+    //modal.present();
   }
   goToSignUp(){
     this.navCtrl.push(SignUpPage)

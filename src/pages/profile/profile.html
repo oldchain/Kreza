@@ -30,10 +30,16 @@
         
         <ion-item id="buttonWithIcons">
             <ion-row>
-                <ion-col col-8 no-padding>
+                <ion-col col-4 no-padding>
                     <button ion-button clear  class="text-on-bottom"  no-margin>
                         <ion-icon ios="ios-camera" md="md-camera"></ion-icon>
                         Add Photo
+                    </button>
+                </ion-col>
+                <ion-col col-4 no-padding>
+                    <button ion-button clear  class="text-on-bottom" (click)="gotomissions()"  no-margin>
+                        <ion-icon ios="ios-ribbon" md="md-ribbon"></ion-icon>
+                        Missions
                     </button>
                 </ion-col>
                 <ion-col col-4 no-padding>

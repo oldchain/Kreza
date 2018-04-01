@@ -7,5 +7,14 @@
 </ion-header>
 
 <ion-content padding>
-
+  <ion-list  detail-push id="userInfo">
+    <button ion-item (click)="gotoaddbusiness()"> 
+        <ion-icon ios="ios-clipboard" md="md-clipboard"></ion-icon>
+        Add Business
+    </button>
+    <button ion-item (click)="gotoleaderboard()">
+        <ion-icon ios="ios-camera" md="md-camera" ></ion-icon>
+        Leaderboard 
+    </button>
+</ion-list>
 </ion-content>

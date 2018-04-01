@@ -17,6 +17,9 @@ import { LoginFormPage } from "../pages/login-form/login-form";
 
 
 import { StatusBar } from '@ionic-native/status-bar';
+import { MissionsPage } from '../pages/missions/missions';
+import { AddBusinessPage } from '../pages/add-business/add-business';
+import { LeaderboardPage } from '../pages/leaderboard/leaderboard';
 
 
 
@@ -32,7 +35,10 @@ import { StatusBar } from '@ionic-native/status-bar';
     LoginPage,
     WriteReviewPage,
     IonRating,
-    LoginFormPage
+    LoginFormPage,
+    MissionsPage,
+    AddBusinessPage,
+    LeaderboardPage
   ],
   imports: [
     BrowserModule,
@@ -49,7 +55,10 @@ import { StatusBar } from '@ionic-native/status-bar';
     LoginPage,
     WriteReviewPage,
     TabsPage,
-    LoginFormPage
+    LoginFormPage,
+    MissionsPage,
+    AddBusinessPage,
+    LeaderboardPage
   ],
   providers: [
     StatusBar,
