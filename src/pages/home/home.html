@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-searchbar (ionInput)="getItems($event)" placeholder="Place: Buffalo Burger/Location.."></ion-searchbar>
+  <ion-searchbar (ionInput)="getItems($event)" placeholder="Place: Buffalo Burger/Location.." spellcheck="true"></ion-searchbar>
   <ion-card *ngFor="let item of filtered" (click)="goToBusiness(item)">
     <img src="{{item.photo}}" class="img-responsive"/>
     <ion-card-content>
