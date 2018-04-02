@@ -1,10 +1,11 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { IonRating } from '../components/ion-rating/ion-rating';
 import { SplashScreen } from '@ionic-native/splash-screen'; 
-
+import { HttpClient } from '@angular/common/http';
 import { AboutPage } from '../pages/about/about';
 import { ProfilePage } from '../pages/profile/profile';
 import { HomePage } from '../pages/home/home';
@@ -20,6 +21,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MissionsPage } from '../pages/missions/missions';
 import { AddBusinessPage } from '../pages/add-business/add-business';
 import { LeaderboardPage } from '../pages/leaderboard/leaderboard';
+import { BusinessesProvider } from '../providers/businesses/businesses';
 
 
 
@@ -38,10 +40,12 @@ import { LeaderboardPage } from '../pages/leaderboard/leaderboard';
     LoginFormPage,
     MissionsPage,
     AddBusinessPage,
-    LeaderboardPage
-  ],
+    LeaderboardPage,
+    
+    ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -63,7 +67,9 @@ import { LeaderboardPage } from '../pages/leaderboard/leaderboard';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    HttpClient,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    BusinessesProvider
   ]
 })
 export class AppModule {}

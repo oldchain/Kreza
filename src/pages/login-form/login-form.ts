@@ -14,11 +14,13 @@ import { ProfilePage } from '../profile/profile';
   selector: 'page-login-form',
   templateUrl: 'login-form.html',
 })
+
 export class LoginFormPage {
   username:string;
   password:string;
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
   }
+  
   dismiss() {
     this.viewCtrl.dismiss();
   }

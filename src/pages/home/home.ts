@@ -1,37 +1,48 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { BusinessPage } from '../business/business';
-import { SplashScreen } from '@ionic-native/splash-screen';
+import { Observable } from 'rxjs/Observable';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'home.html',
+
 })
 export class HomePage {
 
   searchQuery: string = '';
-  items: any[];
-  initializeItems() {
-    this.items = [
-      {name: 'Amsterdam',src: '././assets/imgs/buffalo_inner_banner.jpg'},
-      {name: 'Bolgaria',src: '././assets/imgs/buffalo_inner_banner.jpg'}
-    ];
+  items: Observable<any>
+  business: any[];
+  filtered:any[];
+  getBusinesses(){
+    this.items = this.httpClient.get('https://kreza.herokuapp.com/api/v1/business/search');
+    this.items
+    .subscribe(data => {
+      console.log('my data: ', data)
+      this.business = data.results;
+      this.filtered = data.results;
+      console.log(this.business);
+      console.log(this.filtered);
+    });
+  };
+  initializeItems(){ 
+    this.filtered = this.business;
+
   }
-  constructor(public navCtrl: NavController) {
-    this.initializeItems();
+  constructor(public navCtrl: NavController, private httpClient : HttpClient) {
+    this.getBusinesses();
   }
   getItems(ev: any) {
-    // Reset items back to all of the items
     this.initializeItems();
 
-    // set val to the value of the searchbar
     let val = ev.target.value;
 
-    // if the value is an empty string don't filter the items
-    if (val && val.trim() != '') {
-      this.items = this.items.filter((item) => {
-        return (item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
-      })
+    if (val && val.trim() !== '') {
+      this.filtered = this.filtered.filter(function(item) {
+        return item.business_name.toLowerCase().includes(val.toLowerCase());
+      });
     }
   }
   goToBusiness(item: string){

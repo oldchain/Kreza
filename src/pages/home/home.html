@@ -6,28 +6,27 @@
 
 <ion-content>
   <ion-searchbar (ionInput)="getItems($event)" placeholder="Place: Buffalo Burger/Location.."></ion-searchbar>
-  <ion-card *ngFor="let item of items" (click)="goToBusiness(item)">
-    <img src="{{item.src}}"/>
+  <ion-card *ngFor="let item of filtered" (click)="goToBusiness(item)">
+    <img src="{{item.photo}}" class="img-responsive"/>
     <ion-card-content>
       <ion-card-title class="title">
           <ion-grid>
               <ion-row>
-                <ion-col col-7>{{item.name}}</ion-col>
+                <ion-col col-7>{{item.business_name}}</ion-col>
                 <ion-col col-5>
                   <ion-rating
                   [numStars]="5"
-                  [value]="3.2">
+                  value="{{item.rating}}">
                 </ion-rating>
               </ion-col>
               </ion-row>
               <ion-row>
-                <a>#Burger #Resturant</a>
+                <a>{{item.tags}}</a>
               </ion-row>
             </ion-grid>
       </ion-card-title>
       <p class="desc">
-        The most popular industrial group ever, and largely
-        responsible for bringing the music to a mass audience.
+        {{item.last_review}}
       </p>
     </ion-card-content>
   </ion-card>
