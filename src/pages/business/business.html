@@ -15,20 +15,20 @@
 
 <ion-content>
     <ion-card>
-        <img src="{{item.src}}"/>
+        <img src="{{item.photo}}"/>
         <ion-card-content>
             <ion-grid>
                 <ion-row>
-                  <ion-col col-7>{{item.name}}</ion-col>
+                  <ion-col col-7>{{item.business_name}}</ion-col>
                   <ion-col col-5>
                     <ion-rating
                     [numStars]="5"
-                    [value]="3.2">
+                    value="{{item.rating}}">
                   </ion-rating>
                 </ion-col>
                 </ion-row>
                 <ion-row>
-                  <a>#Burger #Resturant</a>
+                  <a>{{item.tags}}</a>
                 </ion-row>
               </ion-grid>
               <p>
