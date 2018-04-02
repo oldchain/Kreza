@@ -15,13 +15,14 @@
 
 <ion-content>
     <ion-card>
-        <img src="{{item.photo}}"/>
+
+        <img src="{{item.photo}}">
         <ion-card-content>
             <ion-grid>
                 <ion-row>
-                  <ion-col col-7>{{item.business_name}}</ion-col>
+                  <ion-col col-7>{{item.name}}</ion-col>
                   <ion-col col-5>
-                    <ion-rating
+                  <ion-rating
                     [numStars]="5"
                     value="{{item.rating}}">
                   </ion-rating>
@@ -36,6 +37,17 @@
                   responsible for bringing the music to a mass audience.
                 </p>
         </ion-card-content>
+        <ion-item>
+          <ion-icon name="pin" item-start large></ion-icon>
+          <h2>Address</h2>
+          <p>{{item.address}}</p>
+        </ion-item>
+      
+        <ion-item>
+          <ion-icon name="call" item-left large ></ion-icon>
+          <h2>Phone</h2>
+          <p>{{item.phone}}</p>
+        </ion-item>
         <ion-list>
             <ion-item>
                 <ion-label>Opening Hour</ion-label>
