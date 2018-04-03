@@ -59,7 +59,11 @@
       "cordova-plugin-device": {},
       "cordova-plugin-ionic-webview": {},
       "cordova-plugin-ionic-keyboard": {},
-      "cordova-plugin-splashscreen": {}
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-facebook4": {
+        "APP_ID": "907184696129530",
+        "APP_NAME": "Kreza"
+      }
     },
     "platforms": [
       "ios",
