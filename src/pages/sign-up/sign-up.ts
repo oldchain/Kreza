@@ -5,7 +5,6 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { FormBuilder, Validators } from '@angular/forms';
 import { UserService } from "../../app/services/user.service";
-import { AuthService } from '../../app/services/auth.service';
 import { AlertController } from 'ionic-angular';
 import { Response } from '@angular/http';
 
@@ -38,7 +37,7 @@ export class SignUpPage {
   });
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: HttpClient,
-  private formBuilder: FormBuilder, public userService: UserService,private auth: AuthService,
+  private formBuilder: FormBuilder, public userService: UserService,
   public alertCtrl: AlertController) {
   }
 
@@ -82,17 +81,6 @@ export class SignUpPage {
     this.user.gender = this.formGroup.controls.gender.value;
     this.user.birthdate = this.formGroup.controls.date.value;
     console.log(this.user.firstname);
-    this.signup(this.user).subscribe(data => {
-      localStorage.setItem('token', data.token);
-      this.auth.decodeTokken(data.token);
-      console.log(this.user.firstname);
-      this.userService.getUser(this.auth.decodeTokken(data.token)).subscribe(data => {
-        if (data.success) {
-          this.userService.updateLocalUser(data.user);
-          alertSuccess.present();
-        }
-      }, error => alertFail.present());
-    });
   }
 
 
