@@ -64,16 +64,6 @@ export class SignUpPage {
   }
   
   register() {
-    let alertSuccess = this.alertCtrl.create({
-      title: 'Signed up Successfully!Welcome to kreza!!',
-      subTitle: 'Welcome to kreza!',
-      buttons: ['OK']
-    });
-    let alertFail = this.alertCtrl.create({
-      title: 'Sign Up failed!',
-      subTitle: 'Something went wrong, please try again',
-      buttons: ['OK']
-    });
     this.user.firstname = this.formGroup.controls.firstName.value;
     this.user.lastname = this.formGroup.controls.lastName.value;
     this.user.email = this.formGroup.controls.email.value;

@@ -25,7 +25,6 @@ import { AddBusinessPage } from '../pages/add-business/add-business';
 import { LeaderboardPage } from '../pages/leaderboard/leaderboard';
 import { BusinessesProvider } from '../providers/businesses/businesses';
 import { UserService } from "../app/services/user.service";
-import { AuthService } from '../app/services/auth.service';
 
 
 
@@ -74,7 +73,6 @@ import { AuthService } from '../app/services/auth.service';
     SplashScreen,
     HttpClient,
     UserService,
-    AuthService,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     BusinessesProvider,
     Facebook
