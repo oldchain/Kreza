@@ -67,38 +67,32 @@
               <ion-icon name="arrow-right"></ion-icon>
             </a>
       </ion-card>
-    <ion-row class="review">
-        <ion-row>
-          <ion-col col-3><img src="{{item.src}}"></ion-col>
-          <ion-col col-9>         
-              <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+  <ion-card *ngFor="let reviews of review" >
+      <ion-card-header>
+          <ion-row>
+              <ion-col col-3><img src=""></ion-col>
+              <ion-col col-3>qweqwe<img src=""></ion-col>
+            </ion-row>
+              <ion-row>
+                <ion-col col-5>
+                  <ion-rating
+                  [numStars]="5"
+                  value="{{reviews.rate}}">
+                </ion-rating>
+                </ion-col>
+            </ion-row>
+      </ion-card-header>
+      <ion-card-content>
+          {{reviews.content}}
+      </ion-card-content>
+      <ion-row>
+          <ion-col>
+            <button ion-button icon-left clear small>
+              <ion-icon name="arrow-up"></ion-icon>
+              <ion-icon name="arrow-down"></ion-icon>
+              <div>votes - 1</div>
+            </button>
           </ion-col>
         </ion-row>
-        <ion-row>
-            <ion-col>
-              <button ion-button icon-left clear small>
-                <ion-icon name="arrow-up"></ion-icon>
-                <ion-icon name="arrow-down"></ion-icon>
-                <div>votes - 12</div>
-              </button>
-            </ion-col>
-          </ion-row>
-    </ion-row>
-    <ion-row class="review">
-        <ion-row>
-          <ion-col col-3><img src="{{item.src}}"></ion-col>
-          <ion-col col-9>         
-              <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-            <ion-col>
-              <button ion-button icon-left clear small>
-                <ion-icon name="arrow-up"></ion-icon>
-                <ion-icon name="arrow-down"></ion-icon>
-                <div>votes - 12</div>
-              </button>
-            </ion-col>
-          </ion-row>
-    </ion-row>
+    </ion-card>
 </ion-content>
