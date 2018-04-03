@@ -3,6 +3,8 @@ import { NavController } from 'ionic-angular';
 import { BusinessPage } from '../business/business';
 import { Observable } from 'rxjs/Observable';
 import { HttpClient } from '@angular/common/http';
+import { LoadingController } from 'ionic-angular';
+
 
 
 @Component({
@@ -17,9 +19,14 @@ export class HomePage {
   business: any[];
   filtered:any[];
   getBusinesses(){
+    let loader = this.loadingCtrl.create({
+      content: "Getting Businesses",
+    });
+    loader.present();
     this.items = this.httpClient.get('https://kreza.herokuapp.com/api/v1/business/search');
     this.items
     .subscribe(data => {
+      loader.dismiss();
       console.log('my data: ', data)
       this.business = data.results;
       this.filtered = data.results;
@@ -31,9 +38,10 @@ export class HomePage {
     this.filtered = this.business;
 
   }
-  constructor(public navCtrl: NavController, private httpClient : HttpClient) {
+  constructor(public navCtrl: NavController, private httpClient : HttpClient,public loadingCtrl: LoadingController) {
     this.getBusinesses();
   }
+
   getItems(ev: any) {
     this.initializeItems();
 

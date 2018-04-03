@@ -15,18 +15,33 @@ import { SignUpPage } from '../pages/sign-up/sign-up';
 import { LoginPage } from '../pages/login/login';
 import { WriteReviewPage } from '../pages/write-review/write-review';
 import { LoginFormPage } from "../pages/login-form/login-form";
+import { Facebook } from '@ionic-native/facebook';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
+import { Response, Headers, RequestOptions } from '@angular/http';
 import { MissionsPage } from '../pages/missions/missions';
 import { AddBusinessPage } from '../pages/add-business/add-business';
 import { LeaderboardPage } from '../pages/leaderboard/leaderboard';
 import { BusinessesProvider } from '../providers/businesses/businesses';
+import { UserService } from "../app/services/user.service";
+import { JwtModule, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { IonicStorageModule,Storage } from '@ionic/Storage';
+import { AuthService } from '../app/services/auth.service';
+export function jwtOptionsFactory(storage) {
+  return {
+    tokenGetter: () => {
+      return storage.get('access_token');
+    },
+    whitelistedDomains: ['localhost:8100']
+  }
+}
 
 
 
 @NgModule({
   declarations: [
+    
     MyApp,
     AboutPage,
     ProfilePage,
@@ -44,6 +59,14 @@ import { BusinessesProvider } from '../providers/businesses/businesses';
     
     ],
   imports: [
+    JwtModule.forRoot({
+      jwtOptionsProvider: {
+        provide: JWT_OPTIONS,
+        useFactory: jwtOptionsFactory,
+        deps: [Storage]
+      }
+    }),
+    IonicStorageModule.forRoot(),
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp)
@@ -68,8 +91,12 @@ import { BusinessesProvider } from '../providers/businesses/businesses';
     StatusBar,
     SplashScreen,
     HttpClient,
+    UserService,
+    IonicStorageModule,
+    AuthService,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    BusinessesProvider
+    BusinessesProvider,
+    Facebook
   ]
 })
 export class AppModule {}

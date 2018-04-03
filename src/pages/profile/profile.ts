@@ -7,9 +7,9 @@ import { MissionsPage } from '../missions/missions';
   templateUrl: 'profile.html'
 })
 export class ProfilePage {
-
+  userData:any;
   constructor(public navCtrl: NavController, public NavParams: NavParams) {
-
+    this.userData = NavParams.get('userData');
   }
   gotomissions(){
     this.navCtrl.push(MissionsPage);
