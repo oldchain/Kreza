@@ -20,10 +20,12 @@ import { HttpClient } from "@angular/common/http";
 export class BusinessPage {
   item:any;
   items: Observable<any>;
-  review:any;
+  review:any[] = new Array();
   reviews:Observable<any>;
-  user:any;
+  user:any[] = new Array();
   users:Observable<any>;
+  reviewers:any[] = new Array();
+  reviewer:Observable<any>;
   getBusinesses(id:string){
     this.items = this.httpClient.get('https://kreza.herokuapp.com/api/v1/business/'+this.item.id);
     this.items
@@ -31,7 +33,7 @@ export class BusinessPage {
       console.log('my data: ', data)
       this.item = data.results;
       console.log(this.item);
-     
+
     });
   };
   getReviews(id:string){
@@ -42,12 +44,25 @@ export class BusinessPage {
       this.review = data.results;
       console.log(this.review);
       this.review.forEach(element => {
-      
+      this.user.push(element.user_id.toString());
+      });
+      console.log(this.user)
+      this.user.forEach(element => {
+        this.reviewer = this.httpClient.get('https://kreza.herokuapp.com/api/v1/users/'+element);
+        this.reviewer
+        .subscribe(data => {
+          this.reviewers.push(data.user);
+          console.log('545434523',this.reviewers);
+          console.log('545434523',this.review);
+        });
       });
     });
   };
-  getUser(element:any){
-      
+
+  getUser(element:any,array:any){
+    let list:any[] = new Array();
+
+    console.log('list', list);
   };
   constructor(public navCtrl: NavController, public navParams: NavParams,public modalCtrl: ModalController,private httpClient : HttpClient) {
     this.item = navParams.get('item');

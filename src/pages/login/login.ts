@@ -27,16 +27,12 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
   openModal(item) {
-    this.navCtrl.push(LoginFormPage)
+    this.navCtrl.push(LoginFormPage);
     //let modal = this.modalCtrl.create(LoginFormPage,{item:this.item});
     //modal.present();
   }
   goToSignUp(){
-    this.navCtrl.push(SignUpPage)
-    .then(() => {
-      const startIndex = this.navCtrl.getActive().index - 1;
-      this.navCtrl.remove(startIndex, 1);
-    });
+    this.navCtrl.push(SignUpPage);
   }
   loginWithFB() {
     this.facebook.login(['email', 'public_profile']).then((response: FacebookLoginResponse) => {

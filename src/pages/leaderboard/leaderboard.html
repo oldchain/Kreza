@@ -12,7 +12,18 @@
 
 </ion-header>
 
-
 <ion-content padding>
-
+    <ion-card *ngFor="let user of item">
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="{{user.photo}}">
+          </ion-avatar>
+          <h2>{{user.first_name}} {{user.last_name}}</h2>
+          <p>{{user.current_exp}} exp</p>
+        </ion-item>
+    
+        <ion-card-content>
+          <p></p>
+        </ion-card-content>
+      </ion-card>
 </ion-content>

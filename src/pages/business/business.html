@@ -67,17 +67,17 @@
               <ion-icon name="arrow-right"></ion-icon>
             </a>
       </ion-card>
-  <ion-card *ngFor="let reviews of review" >
+  <ion-card *ngFor="let reviews of review; index as i">
       <ion-card-header>
           <ion-row>
-              <ion-col col-3><img src=""></ion-col>
-              <ion-col col-3>qweqwe<img src=""></ion-col>
+              <ion-col col-3><img></ion-col>
+              <ion-col col-3>}</ion-col>
             </ion-row>
               <ion-row>
                 <ion-col col-5>
                   <ion-rating
                   [numStars]="5"
-                  value="{{reviews.rate}}">
+                  value="{{review[i].rate}}">
                 </ion-rating>
                 </ion-col>
             </ion-row>
