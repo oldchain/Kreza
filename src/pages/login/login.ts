@@ -20,7 +20,7 @@ import { ProfilePage } from '../profile/profile';
 export class LoginPage {
   item:object;
   userData: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl:ModalController, public facebook: Facebook) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl:ModalController, private facebook: Facebook) {
   }
 
   ionViewDidLoad() {

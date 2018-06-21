@@ -21,11 +21,14 @@
     </ion-row>
   </ion-grid>
 
-      <ion-row id="fbGoogle">
-        <button ion-button block id="facebook" (click)="loginWithFB()">
-            <ion-icon col-1 name="logo-facebook"></ion-icon> 
+      <ion-row>
+        <button ion-button color="primary" (click)="loginWithFB()" block>
+          <ion-icon col-1 name="logo-facebook"></ion-icon> 
             <p col-12>Continue with Facebook</p>
         </button>
       </ion-row>
 
+          <ion-col>        
+        <button ion-button col-6 style="background-color:#939090" (click)="openModal(item)">Login</button>
+      </ion-col>
 </ion-content>
