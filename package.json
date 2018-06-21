@@ -62,7 +62,7 @@
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-facebook4": {
         "APP_ID": "1935489683405194",
-        "APP_NAME": "Kreza"
+        "APP_NAME": "kreza"
       }
     },
     "platforms": [

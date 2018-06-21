@@ -88,6 +88,6 @@
     <plugin name="cordova-plugin-splashscreen" spec="^5.0.2" />
     <plugin name="cordova-plugin-facebook4" spec="^1.9.1">
         <variable name="APP_ID" value="1935489683405194" />
-        <variable name="APP_NAME" value="Kreza" />
+        <variable name="APP_NAME" value="kreza" />
     </plugin>
 </widget>
